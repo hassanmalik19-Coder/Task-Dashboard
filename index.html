@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">T</div>
+                <div>
+                    <h2>TaskFlow</h2>
+                    <span>Task Manager</span>
+                </div>
+            </div>
+
+            <nav>
+                <a href="#" class="nav-item active">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="#tasks-section" class="nav-item">
+                    <span>✓</span>
+                    Tasks
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span>Task Dashboard</span>
+                <small>Full-Stack Application</small>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">WORKSPACE</p>
+                    <h1>Task Dashboard</h1>
+                    <p class="subtitle">Manage your work and stay organized.</p>
+                </div>
+
+                <button id="theme-toggle" class="theme-toggle" type="button">
+                    ☾
+                </button>
+            </header>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon total">T</div>
+                    <div>
+                        <span>Total Tasks</span>
+                        <strong id="total-count">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon pending">○</div>
+                    <div>
+                        <span>Pending</span>
+                        <strong id="pending-count">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon progress">◷</div>
+                    <div>
+                        <span>In Progress</span>
+                        <strong id="progress-count">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon completed">✓</div>
+                    <div>
+                        <span>Completed</span>
+                        <strong id="completed-count">0</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="content-grid">
+
+                <section class="task-form-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">TASK MANAGEMENT</p>
+                            <h2 id="form-title">Create New Task</h2>
+                        </div>
+                    </div>
+
+                    <form id="task-form">
+
+                        <input type="hidden" id="task-id">
+
+                        <div class="form-group">
+                            <label for="title">Task Title</label>
+                            <input
+                                type="text"
+                                id="title"
+                                placeholder="e.g. Complete website design"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea
+                                id="description"
+                                placeholder="Add details about this task..."
+                            ></textarea>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select id="status">
+                                    <option value="Pending">Pending</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <select id="priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="buttons">
+                            <button type="submit" id="submit-btn">
+                                Add Task
+                            </button>
+
+                            <button
+                                type="button"
+                                id="cancel-btn"
+                                class="cancel-btn"
+                                hidden
+                            >
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <section class="tasks-section" id="tasks-section">
+
+                    <div class="tasks-header">
+                        <div>
+                            <p class="eyebrow">YOUR WORK</p>
+                            <h2>Tasks</h2>
+                        </div>
+
+                        <button id="refresh-btn" class="refresh-btn">
+                            ↻
+                        </button>
+                    </div>
+
+                    <div id="loading">Loading tasks...</div>
+
+                    <div id="tasks-container"></div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

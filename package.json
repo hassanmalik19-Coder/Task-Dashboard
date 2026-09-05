@@ -1,0 +1,13 @@
+{
+  "name": "task-dashboard",
+  "version": "1.0.0",
+  "description": "Interactive Dynamic Task Dashboard Platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
